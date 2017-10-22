@@ -1,0 +1,24 @@
+{
+  "name": "export-font",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seyself/export-font.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seyself/export-font/issues"
+  },
+  "homepage": "https://github.com/seyself/export-font#readme",
+  "dependencies": {
+    "fontkit": "^1.7.7",
+    "image-size": "^0.6.1"
+  }
+}
