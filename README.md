@@ -1,9 +1,30 @@
 # export-font
 
+## Installation
+
 ```shell
 $ npm install export-font
 ```
 
+
+## Using ImageMagick
+
+```shell
+$ brew install imagemagick
+```
+
+or
+
+```shell
+$ sudo apt-get install imagemagick
+```
+
+or Download Binary Release
+
+http://www.imagemagick.org/script/download.php
+
+
+## example
 
 ```js
 let exportFont = require('export-font');

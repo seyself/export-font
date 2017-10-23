@@ -1,6 +1,6 @@
 {
   "name": "export-font",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Export charactor images.",
   "main": "index.js",
   "scripts": {
