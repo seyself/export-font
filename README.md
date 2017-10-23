@@ -6,7 +6,7 @@ $ npm install export-font
 
 
 ```js
-let exportFont = require('./index');
+let exportFont = require('export-font');
 
 let options = {
   dest: './dist',
