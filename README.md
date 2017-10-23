@@ -1,7 +1,5 @@
 # export-font
 
-Images are output for each character.
-
 ```
 let exportFont = require('./index');
 
