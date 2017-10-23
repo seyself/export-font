@@ -1,6 +1,6 @@
 # export-font
 
-```
+```js
 let exportFont = require('./index');
 
 let options = {
