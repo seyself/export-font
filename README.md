@@ -1,5 +1,10 @@
 # export-font
 
+```shell
+$ npm install export-font
+```
+
+
 ```js
 let exportFont = require('./index');
 
