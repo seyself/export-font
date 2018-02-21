@@ -6,6 +6,8 @@ const xfs = require('./xfs');
 const xopt = require('./export-font-options');
 const exportJSON = require('./create-font-json');
 
+const _HEIGHT_OFFSET = 0;
+
 module.exports = (options)=>
 {
   let _options = xopt(options);
@@ -15,16 +17,36 @@ module.exports = (options)=>
 
   let size1 = maxSize(options.font.obj, options.vert);
   let size2 = maxSize(options.font2.obj, options.vert);
-  
+
   _options.maxWidth = Math.max(size1.width, size2.width) + _options.marginH * 2;
-  _options.maxHeight = Math.max(size1.height, size2.height) + _options.marginV * 2;
+  _options.maxHeight = Math.max(size1.height, size2.height) + _options.marginV * 2 + _HEIGHT_OFFSET;
   _options.offsetX = _options.maxWidth + Math.min(size1.x, size2.x);
   _options.offsetY = _options.maxHeight + Math.min(size1.y, size2.y);
-  _options.multiple = 1000 / Math.max(_options.maxWidth, _options.maxHeight);
+
+  // _options.multiple = 1000 / Math.max(_options.maxWidth, _options.maxHeight);
+  _options.multiple = 1000 / _options.maxWidth;
+  _options.multiple = _getMultiple(_options);
 
   xfs.mkdir(path.resolve(_options.dest));
 
   iterate(options);
+}
+
+function _getMultiple(options)
+{
+  if (options.fixed == 'h' || options.fixed == 'width')
+  {
+    return 1000 / options.maxWidth;
+  }
+  if (options.fixed == 'v' || options.fixed == 'height')
+  {
+    return 1000 / options.maxHeight;
+  }
+  if (options.fixed)
+  {
+    return 1000 / Math.max(options.maxWidth, options.maxHeight);
+  }
+  return 1000 / options.maxWidth;
 }
 
 function maxSize(font, vert)
